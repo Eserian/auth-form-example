@@ -36,8 +36,28 @@
 
 .submitButton:disabled {
   background: var(--button-bg-disabled-color);
+  cursor: not-allowed;
 }
 
 .submitButton:focus-visible {
   box-shadow: 0 0 0 4px var(--button-focus-color);
+}
+
+.loader {
+  border: 2px solid var(--white-color);
+  border-top: 2px solid var(--button-focus-color);
+  border-radius: 50%;
+  width: 27px;
+  height: 27px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
