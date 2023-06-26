@@ -1,0 +1,86 @@
+:root {
+  --input-focus-color: oklch(67.93% 0.047 254.82);
+  --input-idle-color: oklch(95.61% 0.01 252.81);
+  --input-hover-color: oklch(93.71% 0.013 251.56);
+  --white-color: oklch(100% 0 0);
+  --error-color: oklch(64.54% 0.166 25.84);
+  --label-color: oklch(45.43% 0.061 254.96);
+}
+
+.input {
+  appearance: none;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px var(--input-idle-color);
+  background-color: var(--input-idle-color);
+  font-size: 15px;
+  font-stretch: 100%;
+  font-weight: 400;
+  line-height: 24px;
+  outline: 0;
+  padding: 16px;
+  width: 100%;
+}
+
+.input:hover {
+  box-shadow: 0 0 0 1px var(--input-hover-color);
+  background-color: var(--input-hover-color);
+}
+
+.filledInput {
+  background-color: var(--white-color);
+  box-shadow: 0 0 0 1px var(--input-focus-color);
+}
+
+.filledInput:hover {
+  background-color: var(--white-color);
+  box-shadow: 0 0 0 1px var(--label-color);
+}
+
+.input:focus {
+  background-color: var(--white-color);
+  box-shadow: 0 0 0 2px var(--input-focus-color);
+}
+
+.inputWrapper {
+  border-radius: 8px;
+  line-height: 0;
+  position: relative;
+  display: block;
+}
+
+.labelText {
+  position: absolute;
+  left: 16px;
+  top: 17px;
+  font-size: 15px;
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--label-color);
+  transition-duration: 150ms;
+  transition-property: top, padding, font-size;
+}
+
+.labelTextFocus {
+  padding: 4px;
+  left: 12px;
+  top: -16px;
+  font-size: 12px;
+  background-color: var(--white-color);
+}
+
+.error {
+  font-size: 12.5px;
+  font-stretch: 100%;
+  font-weight: 500;
+  line-height: 22px;
+  margin-top: 6px;
+  color: var(--error-color);
+  padding-left: 16px;
+}
+
+.addon {
+  position: absolute;
+  right: 12px;
+  top: 15px;
+}
