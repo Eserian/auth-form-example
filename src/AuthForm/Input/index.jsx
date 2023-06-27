@@ -2,17 +2,7 @@ import { useState } from 'react';
 import cn from 'classnames';
 import classes from './index.module.css';
 
-export const Input = ({
-  label,
-  error,
-  rightAddon,
-  value,
-  onFocus,
-  onBlur,
-  onChange,
-  name,
-  ...restProps
-}) => {
+export const Input = ({ label, error, rightAddon, value, onFocus, onBlur, name, ...restProps }) => {
   const [focused, setFocused] = useState(false);
 
   const handleInputFocus = (event) => {
@@ -38,7 +28,6 @@ export const Input = ({
         value={value}
         onFocus={handleInputFocus}
         onBlur={handleInputBlur}
-        onChange={onChange}
         name={name}
         {...restProps}
         {...(error && { 'aria-invalid': 'true' })}

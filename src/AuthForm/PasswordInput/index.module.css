@@ -1,8 +1,3 @@
-:root {
-  --icon-hover-color: oklch(67.93% 0.047 254.82);
-  --button-focus-color: oklch(45.43% 0.061 254.96);
-}
-
 .showPasswordButton {
   border: none;
   background: none;
@@ -15,9 +10,9 @@
 }
 
 .showPasswordButton:hover {
-  color: var(--icon-hover-color);
+  color: #859ab5;
 }
 
 .showPasswordButton:focus-visible {
-  box-shadow: 0 0 0 2px var(--button-focus-color);
+  box-shadow: 0 0 0 2px #3f5878;
 }

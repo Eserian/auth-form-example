@@ -1,25 +1,17 @@
-:root {
-  --light-gray-color: oklch(97.1% 0.012 252.81);
-  --white-color: oklch(100% 0 0);
-  --gray-color: oklch(80.15% 0 0);
-  --button-color: oklch(97.44% 0.011 256.69);
-  --button-hover-color: oklch(59.15% 0.219 258.75);
-}
-
 .container {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--light-gray-color);
+  background: #f0f6fe;
   padding: 16px;
 }
 
 .panel {
   padding: 16px;
-  background: var(--white-color);
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 20px 20px 60px var(--gray-color), -20px -20px 60px var(--white-color);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   width: 100%;
 
   @media screen and (min-width: 480px) {
@@ -41,16 +33,16 @@
 
 .logoutButton {
   border: none;
-  background: var(--button-color);
+  background: #f2f7fe;
   cursor: pointer;
   border-radius: 8px;
   padding: 12px;
-  color: var(--button-hover-color);
+  color: #0e75fc;
 }
 
 .logoutButton:hover {
-  background: var(--button-hover-color);
-  color: var(--button-color);
+  background: #0e75fc;
+  color: #f2f7fe;
 }
 
 .logoutButton:focus-visible {
