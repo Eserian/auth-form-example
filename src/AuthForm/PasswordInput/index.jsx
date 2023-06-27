@@ -1,24 +1,17 @@
 import { useState } from 'react';
-import { BaseInput } from '../BaseInput';
+import { Input } from '../Input';
 import { EyeIcon } from './EyeIcon';
 import { EyeCloseIcon } from './EyeCloseIcon';
 import classes from './index.module.css';
 
-export const PasswordInput = ({ value, onChange, error }) => {
+export const PasswordInput = ({ ...props }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const toggleShowPassword = () => setShowPassword((prev) => !prev);
 
   return (
-    <BaseInput
-      label='Password'
+    <Input
       type={showPassword ? 'text' : 'password'}
-      name='password'
-      autoComplete='current-password'
-      value={value}
-      onChange={onChange}
-      error={error}
-      required
       rightAddon={
         <button
           className={classes.showPasswordButton}
@@ -29,6 +22,7 @@ export const PasswordInput = ({ value, onChange, error }) => {
           {showPassword ? <EyeCloseIcon /> : <EyeIcon />}
         </button>
       }
+      {...props}
     />
   );
 };

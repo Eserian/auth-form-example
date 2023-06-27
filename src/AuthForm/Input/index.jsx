@@ -2,7 +2,7 @@ import { useState } from 'react';
 import cn from 'classnames';
 import classes from './index.module.css';
 
-export const BaseInput = ({
+export const Input = ({
   label,
   error,
   rightAddon,

@@ -1,16 +1,15 @@
-import { rest, setupWorker } from 'msw';
+import { createServer, Response } from 'miragejs';
 
-export const setupMockWorker = () => {
-  const worker = setupWorker(
-    rest.post('http://example.com/api/endpoint', async (req, res, ctx) => {
-      const { email, password } = await req.json();
+export const setupMockServer = () =>
+  createServer({
+    routes() {
+      this.post('http://example.com/api/endpoint', async (schema, request) => {
+        const { email, password } = JSON.parse(request.requestBody);
 
-      if (email === 'user@example.com' && password === 'password123') {
-        return res(ctx.status(200), ctx.delay(1000), ctx.json({ success: true }));
-      }
-      return res(ctx.status(400), ctx.delay(1000), ctx.json({ error: 'Invalid credentials' }));
-    }),
-  );
-
-  worker.start();
-};
+        if (email === 'user@example.com' && password === 'password123') {
+          return { success: true };
+        }
+        return new Response(400, {}, { error: 'Invalid credentials' });
+      });
+    },
+  });
