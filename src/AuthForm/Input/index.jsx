@@ -49,7 +49,7 @@ export const Input = ({
       </span>
       {rightAddon && <div className={classes.addon}>{rightAddon}</div>}
       {error && (
-        <div id={`${name}-error`} className={classes.error} role='alert'>
+        <div id={`${name}-error`} className={classes.error}>
           {error}
         </div>
       )}

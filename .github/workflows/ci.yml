@@ -11,7 +11,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          yarn
+          yarn ci
           yarn build
 
       - name: Deploy to GitHub Pages 🚀

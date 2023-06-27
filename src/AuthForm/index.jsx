@@ -22,6 +22,14 @@ export const AuthForm = () => {
     setEmailError(newEmailError);
     setPasswordError(newPasswordError);
 
+    if (newEmailError) {
+      document.getElementById('email').focus();
+    }
+
+    if (newPasswordError && !newEmailError) {
+      document.getElementById('password').focus();
+    }
+
     if (!newPasswordError && !newEmailError) {
       try {
         setIsFetching(true);
@@ -51,11 +59,22 @@ export const AuthForm = () => {
   return (
     <form noValidate onSubmit={hadnleSubmit}>
       <div className={classes.layout}>
-        <h1>Log In</h1>
+        <h1 className={classes.title}>Log In</h1>
+        {(emailError || passwordError) && (
+          <div role='alert' className={classes.hidden}>
+            The form could not be submitted because of validation errors.
+          </div>
+        )}
+        {fetchError && (
+          <div role='alert' className={classes.error}>
+            Error: {fetchError}
+          </div>
+        )}
         <Input
           label='Email'
           type='email'
           name='email'
+          id='email'
           autoComplete='username'
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -65,6 +84,7 @@ export const AuthForm = () => {
         <PasswordInput
           label='Password'
           name='password'
+          id='password'
           autoComplete='current-password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
@@ -78,7 +98,6 @@ export const AuthForm = () => {
             <span className={classes.buttonText}>Log in</span>
           )}
         </button>
-        <div>{fetchError}</div>
       </div>
     </form>
   );
