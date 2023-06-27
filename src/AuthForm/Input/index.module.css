@@ -30,7 +30,6 @@
 
 .input:focus {
   background-color: #ffffff;
-  box-shadow: 0 0 0 2px #859ab5;
 }
 
 .inputWrapper {

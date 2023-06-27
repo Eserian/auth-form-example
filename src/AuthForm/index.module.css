@@ -34,10 +34,6 @@
   cursor: not-allowed;
 }
 
-.submitButton:focus-visible {
-  box-shadow: 0 0 0 4px #859ab5;
-}
-
 .loader {
   border: 2px solid #ffffff;
   border-top: 2px solid #859ab5;

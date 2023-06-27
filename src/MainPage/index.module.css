@@ -45,10 +45,6 @@
   color: #f2f7fe;
 }
 
-.logoutButton:focus-visible {
-  box-shadow: 0 0 0 4px var(--button-focus-color);
-}
-
 .buttonText {
   color: currentColor;
   font-size: 15px;

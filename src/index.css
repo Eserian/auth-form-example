@@ -10,3 +10,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
+button:focus-visible, input:focus-visible {
+  outline: 4px solid #859ab5;
+}

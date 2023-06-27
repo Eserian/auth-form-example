@@ -12,7 +12,3 @@
 .showPasswordButton:hover {
   color: #859ab5;
 }
-
-.showPasswordButton:focus-visible {
-  box-shadow: 0 0 0 2px #3f5878;
-}
