@@ -51,3 +51,8 @@
   font-weight: 500;
   line-height: 160%;
 }
+
+.forgotPasswordLink {
+  text-align: center;
+  margin-top: 20px
+}

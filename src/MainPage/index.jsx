@@ -12,7 +12,12 @@ export const MainPage = () => {
     <div className={classes.container}>
       <div className={classes.panel}>
         {!auth ? (
-          <AuthForm />
+          <>
+            <AuthForm />
+            <div className={classes.forgotPasswordLink}>
+              <a href="#">Forgot your password?</a>
+            </div>
+          </>
         ) : (
           <div className={classes.centred}>
             <h2>Successfully authenticated!</h2>
